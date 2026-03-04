@@ -1,0 +1,326 @@
+## 1) Brand Summary
+
+**Personality**
+
+* Futuristic
+* Precise
+* Bold
+* Structured
+* High-clarity
+
+**Should never feel like**
+
+* Colorful festival poster
+* Corporate banking dashboard
+* Over-animated or flashy
+
+**Positioning**
+MITILENCE 2K26 is a premium, tech-forward robotics symposium platform that feels controlled, intelligent, and mission-driven.
+
+---
+
+## 2) Color System
+
+### Backgrounds
+
+* Base: `#0F1115`
+* Surface: `#171A21`
+* Elevated: `#1E222B`
+
+### Text
+
+* Primary: `#E6E8EC`
+* Secondary: `#B5BAC4`
+* Muted: `#7A818D`
+
+### Borders / Dividers
+
+* Subtle border: `#262B35`
+* Strong border: `#323845`
+
+### Accent (Primary)
+
+* Electric Cyan: `#00E5FF`
+
+### Semantic Colors
+
+* Success: `#22C55E`
+* Warning: `#F59E0B`
+* Error: `#EF4444`
+* Info: `#3B82F6`
+
+**Contrast Rules**
+
+* Use Primary text on Surface/Elevated only.
+* Accent color only on dark backgrounds.
+* Never place Muted text on Base background.
+* Buttons must meet WCAG AA contrast.
+
+---
+
+## 3) Typography
+
+### Primary Font
+
+`Inter` (Google Font)
+Fallback: `system-ui, -apple-system, Segoe UI, Roboto, sans-serif`
+
+### Numeric Font (for stats, counts, countdown)
+
+`Space Grotesk` (optional)
+Fallback: same as primary
+
+### Type Scale
+
+* H1: 32px / 700
+* H2: 24px / 600
+* H3: 18px / 600
+* Body: 15px / 400
+* Small: 13px / 400
+* Micro labels: 11px / 500 (uppercase, letter-spacing 0.08em)
+
+**Usage**
+
+* H1 only on hero / dashboard top.
+* H2 for section titles.
+* H3 for card titles.
+* Numeric font for counts, totals, countdown.
+
+---
+
+## 4) Spacing + Layout
+
+### Spacing Scale (8-based)
+
+* 4px
+* 8px
+* 16px
+* 24px
+* 32px
+* 48px
+* 64px
+
+### Grid
+
+* Mobile: 1-column, 16px side padding
+* Tablet: 2-column cards
+* Desktop: 3–4 column dashboard layout
+
+### Cards
+
+* Padding: 20px
+* Radius: 12px
+* Border: 1px solid subtle border
+* Elevation: very soft shadow `0 2px 8px rgba(0,0,0,0.3)`
+* Matte feel — no glossy gradients
+
+---
+
+## 5) Components
+
+### Buttons
+
+**Primary**
+
+* BG: Accent
+* Text: #0F1115
+* Hover: slightly darker cyan
+* Active: reduce brightness 8%
+* Focus-visible: 2px outline Accent
+* Disabled: `#2A2F38` background + muted text
+
+**Secondary**
+
+* BG: Surface
+* Border: strong border
+* Text: Primary
+
+**Ghost**
+
+* BG: transparent
+* Text: Accent
+* Hover: subtle accent tint background
+
+**Destructive**
+
+* BG: Error
+* Text: white
+* Hover: darker red
+
+---
+
+### Inputs (Text, Number, Date, Select)
+
+* BG: Surface
+* Border: subtle border
+* Text: Primary
+* Placeholder: Muted
+* Focus: border Accent + soft glow
+* Error: border Error + error text below
+* Disabled: darker surface + muted text
+
+---
+
+### Chips (Event Categories)
+
+* BG: Elevated
+* Border: subtle border
+* Text: Secondary
+* Active: Accent background + dark text
+
+---
+
+### Cards
+
+* Surface background
+* Clear header separation
+* Optional accent strip on top (2px)
+
+---
+
+### List Rows (Registrations)
+
+* Elevated background
+* Bottom border subtle
+* Hover: slight background lift
+* Status badges colored using semantic tokens
+
+---
+
+### Modal / Drawer
+
+* Backdrop: `rgba(0,0,0,0.6)`
+* Panel: Elevated background
+* Radius: 16px
+* Slide up on mobile, centered on desktop
+* Esc closes
+
+---
+
+### Toast / Snackbar
+
+* Elevated background
+* Border subtle
+* Success/Error colored left strip
+* Auto-dismiss 5 seconds
+
+---
+
+## 6) Iconography + Imagery
+
+* Stroke icons
+* 1.5–2px stroke width
+* Rounded corners
+* No filled heavy icons
+* No stock photos
+* If imagery used: robotics lab or abstract tech lines
+
+---
+
+## 7) Motion
+
+* Duration: 150–200ms
+* Easing: ease-out
+* Hover transitions only opacity/transform
+* No parallax
+* If prefers-reduced-motion: disable all transforms and transitions
+
+---
+
+## 8) Accessibility Checklist
+
+* Visible focus ring (never remove)
+* 4.5:1 minimum contrast
+* 44px minimum tap targets
+* Modal focus trap
+* Esc closes modal
+* Keyboard navigation for admin controls
+
+---
+
+## 9) Design Tokens (CSS)
+
+```css
+:root {
+  /* Backgrounds */
+  --color-bg-base: #0F1115;
+  --color-bg-surface: #171A21;
+  --color-bg-elevated: #1E222B;
+
+  /* Text */
+  --color-text-primary: #E6E8EC;
+  --color-text-secondary: #B5BAC4;
+  --color-text-muted: #7A818D;
+
+  /* Borders */
+  --color-border-subtle: #262B35;
+  --color-border-strong: #323845;
+
+  /* Accent */
+  --color-accent: #00E5FF;
+
+  /* Semantic */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  /* Motion */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 200ms ease-out;
+}
+```
+
+---
+
+## JSON Tokens
+
+```json
+{
+  "colors": {
+    "background": {
+      "base": "#0F1115",
+      "surface": "#171A21",
+      "elevated": "#1E222B"
+    },
+    "text": {
+      "primary": "#E6E8EC",
+      "secondary": "#B5BAC4",
+      "muted": "#7A818D"
+    },
+    "border": {
+      "subtle": "#262B35",
+      "strong": "#323845"
+    },
+    "accent": "#00E5FF",
+    "semantic": {
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6"
+    }
+  },
+  "radius": {
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px"
+  },
+  "spacing": [4, 8, 16, 24, 32, 48],
+  "motion": {
+    "fast": "150ms ease-out",
+    "normal": "200ms ease-out"
+  }
+}

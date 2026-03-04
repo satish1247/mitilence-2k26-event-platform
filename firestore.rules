@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId;
+
+      // Admin can read all users
+      allow read: if request.auth != null && isAdmin();
+    }
+
+    // Events collection
+    match /events/{eventId} {
+      allow read: if true; // Public read
+      allow write: if request.auth != null && isAdmin();
+    }
+
+    // Registrations collection
+    match /registrations/{regId} {
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin());
+      
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      
+      allow update: if request.auth != null && (
+        isAdmin() || 
+        (resource.data.userId == request.auth.uid && 
+         resource.data.approvalStatus == "Pending" &&
+         request.resource.data.approvalStatus == "Pending" &&
+         request.resource.data.userId == request.auth.uid &&
+         (request.resource.data.paymentStatus == "Pending Verification" || 
+          request.resource.data.paymentStatus == "Pay on Event Day" || 
+          request.resource.data.paymentStatus == resource.data.paymentStatus))
+      );
+      
+      allow delete: if request.auth != null && resource.data.userId == request.auth.uid
+                     && resource.data.approvalStatus == "Pending"
+                     && resource.data.paymentStatus != "Paid";
+    }
+
+    // Gallery collection
+    match /gallery/{itemId} {
+      allow read: if true; // Public read
+      allow write: if request.auth != null && isAdmin();
+    }
+
+    // Audit logs
+    match /audit_logs/{logId} {
+      allow read: if request.auth != null && isAdmin();
+      allow create: if request.auth != null; // Automated logging
+    }
+
+    // Helper functions
+    function isAdmin() {
+      let user = get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+      return user.role == "admin" || user.role == "super_admin";
+    }
+  }
+}

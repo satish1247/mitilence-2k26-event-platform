@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#API keys and heavy files
+node_modules
+.env
+.env.local
+.next
+dist
+.firebase
+functions/node_modules
+functions/.env
