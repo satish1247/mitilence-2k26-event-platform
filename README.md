@@ -116,22 +116,39 @@ ganisettisatish34@gmail.com
 ---
 
 # 📸 Screenshots
+
 **HOME PAGE**
+
 <img width="1893" height="989" alt="Screenshot 2026-03-05 083211" src="https://github.com/user-attachments/assets/0d2a47f6-58ed-4426-b175-c42761a60b24" />
 
+
+
 **EVENTS PAGE**
+
 <img width="1889" height="978" alt="Screenshot 2026-03-05 083438" src="https://github.com/user-attachments/assets/0a1ee28a-d8a0-44a5-91c5-ab8faafae273" />
 
+
+
 **GALLERY PAGE**
+
 <img width="1894" height="994" alt="Screenshot 2026-03-05 083652" src="https://github.com/user-attachments/assets/30861f16-2fb3-4984-8f66-0df2f8f54ee0" />
 
+
+
 **DASHBOARD PAGE**
+
 <img width="1887" height="987" alt="Screenshot 2026-03-05 083849" src="https://github.com/user-attachments/assets/f49f2168-2673-4a3f-a77b-980ce263703a" />
 
+
+
 **LOGIN PAGE**
+
 <img width="1885" height="993" alt="Screenshot 2026-03-05 083914" src="https://github.com/user-attachments/assets/38efc6d0-582c-4ce5-bb13-5f528a3facd8" />
 
+
+
 **AI**
+
 <img width="480" height="781" alt="Screenshot 2026-03-05 083938" src="https://github.com/user-attachments/assets/9d80ce80-ff95-42df-84ae-c4e3d6078e19" />
 
 
